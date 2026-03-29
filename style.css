@@ -1,0 +1,183 @@
+/* 基本樣式重置 */
+body, h1, h2, p, ul, li, input, button, label {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif; /* 使用可愛、清晰的字體 */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* 防止背景圖片滾動 */
+    position: relative;
+}
+
+/* 柯基背景圖片 */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 使用一個在線的可愛柯基圖片。你可以換成你自己的 URL */
+    background-image: url('https://meee.com.tw/6X3zMy8.png'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* 添加一點模糊效果，讓前景更清晰 */
+    opacity: 0.7; /* 降低透明度，更柔和 */
+    z-index: -1;
+}
+
+/* 計算器主容器 */
+.calculator-container {
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+    padding: 30px;
+    border-radius: 25px; /* 超圓角，感覺更可愛 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* 現代感的毛玻璃效果 */
+    border: 3px solid #fce4ec; /* 柔和的粉色邊框 */
+}
+
+h1 {
+    color: #ff80ab; /* 可愛的粉紅色 */
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="date"]:focus {
+    border-color: #ff80ab;
+}
+
+/* 單選按鈕樣式 (體型選擇) */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* 隱藏原本的單選按鈕 */
+}
+
+.radio-group label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #555;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: normal;
+    font-size: 0.95rem;
+    border: 2px solid transparent;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: #ff80ab; /* 選中時的粉紅色 */
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(255, 128, 171, 0.4);
+    border-color: #ff4081;
+}
+
+/* 計算按鈕 */
+button#calculate-btn {
+    background-color: #4fc3f7; /* 可愛的天藍色 */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 5px 15px rgba(79, 195, 247, 0.4);
+}
+
+button#calculate-btn:hover {
+    background-color: #03a9f4;
+}
+
+button#calculate-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(79, 195, 247, 0.4);
+}
+
+/* 結果區域 */
+.result-area {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #ff80ab;
+    text-align: left;
+}
+
+.result-area.hidden {
+    display: none;
+}
+
+.result-area h2 {
+    color: #ff80ab;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.human-age-box {
+    background-color: #fff9c4; /* 淡淡的黃色背景 */
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#human-age-display {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #f57f17; /* 深黃色/橙色，突出數字 */
+}
+
+.unit {
+    font-size: 1.2rem;
+    color: #f57f17;
+    margin-left: 5px;
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 15px;
+    font-style: italic;
+    text-align: center;
+}

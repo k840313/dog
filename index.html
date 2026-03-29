@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狗狗年齡計算機 🐶</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-overlay"></div> <div class="calculator-container">
+        <h1>狗狗年齡計算機 🐾</h1>
+        
+        <div class="input-group">
+            <label for="dog-birthday">狗狗的生日：</label>
+            <input type="date" id="dog-birthday" required>
+        </div>
+
+        <div class="input-group">
+            <label>狗狗的體型：</label>
+            <div class="radio-group">
+                <input type="radio" id="small" name="dog-size" value="small" checked>
+                <label for="small">小型犬 (<10kg)</label>
+
+                <input type="radio" id="medium" name="dog-size" value="medium">
+                <label for="medium">中型犬 (10-25kg)</label>
+
+                <input type="radio" id="large" name="dog-size" value="large">
+                <label for="large">大型犬 (>25kg)</label>
+            </div>
+        </div>
+
+        <button id="calculate-btn">計算</button>
+
+        <div id="result-area" class="result-area hidden">
+            <h2>計算結果：</h2>
+            <p>您的狗狗目前是：<span id="dog-age-display">--</span> 歲</p>
+            <p>換算成人類年齡大約是：</p>
+            <div class="human-age-box">
+                <span id="human-age-display">--</span>
+                <span class="unit">歲</span>
+            </div>
+            <p class="disclaimer">* 此計算結果僅供參考，實際健康狀況請諮詢獸醫師。</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
